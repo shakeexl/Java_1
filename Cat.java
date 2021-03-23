@@ -1,32 +1,26 @@
-package ru.geekbrains.lesson_6;
+package ru.geekbrains.lesson_7;
 
-public class Cat extends Animal {
-    static int counter = 0;
-    String color;
-    int max_run = 200;
+public class Cat {
+    private final String name;
+    private final int appetite;
+    private boolean satiety;
 
-    public Cat (String name, String color) {
-        counter++;
+    public Cat(String name, int appetite) {
         this.name = name;
-        this.color = color;
+        this.appetite = appetite;
+        satiety = false;
     }
 
-    @Override
-    public void run(int run_dist) {
-        if (run_dist <= max_run) {
-            System.out.println(color + " cat " + name + " run " + run_dist + "m");
-        }
-        else {
-            System.out.println("Cat cannot run more than " + max_run + " meters!");
-        }
-    }
-    @Override
-    public void swim(int swim_dist) {
-        System.out.println("Cat cannot swim!");
+    public void eat(Plate p) {
+        System.out.println("The cat is eating...");
+         if (p.decreaseFood(appetite)) {
+             satiety = true;
+         }
     }
 
-    @Override
-    public void count() {
-        System.out.println("Amount of cats: " + counter);
+    public void info() {
+        if (satiety) {
+            System.out.println(name + " is full");
+        } else {System.out.println(name + " is still hungry");}
     }
 }

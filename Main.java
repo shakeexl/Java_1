@@ -1,17 +1,23 @@
-package ru.geekbrains.lesson_6;
+package ru.geekbrains.lesson_7;
 
 public class Main {
     public static void main(String[] args) {
-        Animal animal = new Animal("Casey");
-        Cat cat = new Cat("Kaley", "Grey");
-        Dog dog  = new Dog("Roger", "Black");
-        animal.swim(50);
-        cat.run(250);
-        dog.run(400);
-        cat.swim(50);
-        dog.swim(10);
-        animal.count();
-        cat.count();
-        dog.count();
+        Plate plate = new Plate(200);
+
+        plate.add(50);
+        plate.info();
+
+        Cat[] cats = {
+                new Cat("Casey", 95),
+                new Cat("Kaley", 50),
+                new Cat("Roger", 87),
+        };
+
+        for (Cat cat : cats) {
+            cat.eat(plate);
+            cat.info();
+        }
+
+        plate.info();
     }
 }
