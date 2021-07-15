@@ -1,4 +1,5 @@
 Tasks
+
 Lesson_1
 
 1. Создать пустой проект в IntelliJ IDEA и прописать метод main().
